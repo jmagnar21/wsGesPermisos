@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="LoginWS" targetNamespace="http://wsLogin/" xmlns:tns="http://wsLogin/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" 
+ >
+    <message name="hello"/>
+    <message name="helloResponse"/>
+    <portType name="LoginWS">
+        <operation name="hello">
+            <input message="tns:hello"/>
+            <output message="tns:helloResponse"/>
+        </operation>
+    </portType>
+    <binding name="LoginWSPortBinding" type="tns:LoginWS">
+        <wsp:PolicyReference URI="#LoginWSPortBindingPolicy"/>
+        <operation name="hello">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="LoginWS">
+        <port name="LoginWSPort" binding="tns:LoginWSPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="LoginWSPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>
