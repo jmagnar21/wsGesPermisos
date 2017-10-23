@@ -2,7 +2,22 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
     <service name="LoginWS">
-      <implementation-class>wsLogin.LoginWS</implementation-class>
+      <implementation-class>wsLocal.LoginWS</implementation-class>
+    </service>
+    <service name="VwResumenCantTipoPerWS">
+      <implementation-class>wsLocal.VwResumenCantTipoPerWS</implementation-class>
+    </service>
+    <service name="VwResumenCantPeriodoWS">
+      <implementation-class>wsLocal.VwResumenCantPeriodoWS</implementation-class>
+    </service>
+    <service name="VwPermisoUsuarioWS">
+      <implementation-class>wsLocal.VwPermisoUsuarioWS</implementation-class>
+    </service>
+    <service name="AntiguedadFunWS">
+      <implementation-class>wsLocal.AntiguedadFunWS</implementation-class>
+    </service>
+    <service name="VwSolicitudPermisoWS">
+      <implementation-class>wsLocal.VwSolicitudPermisoWS</implementation-class>
     </service>
   </services>
   <clients/>
